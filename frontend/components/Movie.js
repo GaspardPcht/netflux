@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { Modal } from 'antd';
 import styles from '../styles/Movie.module.css';
 
 function Movie(props) {
   const [watchCount, setWatchCount] = useState(0);
   const [personalNote, setPersonalNote] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
 
   // Average evaluation
   const stars = [];
@@ -45,21 +47,69 @@ function Movie(props) {
     personalStars.push(<FontAwesomeIcon key={i} icon={faStar} onClick={() => setPersonalNote(i + 1)} style={style} className="note" />);
   }
 
+  // Modal handlers
+  const showModal = () => {
+    setModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setModalVisible(false);
+  };
+
   return (
     <div className={styles.card}>
-      <img className={styles.image} src={props.poster} alt={props.title} />
+      <img
+        className={styles.image}
+        src={props.poster}
+        alt={props.title}
+        onClick={showModal}
+      />
       <div className={styles.textContainer}>
         <div>
           <span className={styles.name}>{props.title}</span>
-          <p className={styles.description}>{props.overview}</p>
         </div>
         <div className={styles.iconContainer}>
-          <span className={styles.vote}>{stars} ({props.voteCount})</span>
-          <span>{personalStars} ({personalNote})</span>
-          <span><FontAwesomeIcon icon={faVideo} onClick={() => handleWatchMovie()} style={videoIconStyle} className="watch" /> ({watchCount})</span>
-          <span><FontAwesomeIcon icon={faHeart} onClick={() => handleLikeMovie()} style={heartIconStyle} className="like" /></span>
+          <span className={styles.vote}>
+            {stars} ({props.voteCount})
+          </span>
+          <span>
+            {personalStars} ({personalNote})
+          </span>
+          <span>
+            <FontAwesomeIcon
+              icon={faVideo}
+              onClick={() => handleWatchMovie()}
+              style={videoIconStyle}
+              className="watch"
+            />{" "}
+            ({watchCount})
+          </span>
+          <span>
+            <FontAwesomeIcon
+              icon={faHeart}
+              onClick={() => handleLikeMovie()}
+              style={heartIconStyle}
+              className="like"
+            />
+          </span>
         </div>
       </div>
+      <Modal
+        visible={modalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        className={styles.modal}
+        footer={null}
+        closable={false}
+      >
+        <div className={styles.modalContent}>
+          <p>{props.overview}</p>
+        </div>
+      </Modal>
     </div>
   );
 }
