@@ -1,76 +1,88 @@
 .main {
-	width: 100vw;
-	min-height: 100vh;
-	margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #141414;
 }
 
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100vw;
-	height: 60px;
-	background-color: #021334;
-	color: white;
-	padding: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  background-color: #141414;
+  color: white;
+  padding: 0px 20px 0px 20px;
 }
 
 .title {
-	max-width: 100vw;
-	margin: 40px 0px 0px 120px;
-	font-weight: 600;
+  max-width: 100vw;
+  margin: 40px 0px 0px 120px;
+  font-weight: 600;
+  color: white;
 }
 
 .logocontainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   text-align: center;
 }
 
 .logo {
-	margin-left: 20px;
-	width: 150px;
+  width: 100px;
+  height: 100px;
+}
+
+.name {
+	margin-top: 30px ;
+  font-size:xx-large;
+  font-weight: 800;
+  align-items: center;
+  color: red;
+  text-align: center;
 }
 
 .moviesContainer {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	max-width: 100vw;
-	margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  margin: 20px;
 }
 
 .popover {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 30px;
-	width: 100px;
-	background-color: transparent;
-	color: white;
-	border: 1px white solid;
-	border-radius: 4px;
-	transition-duration: 0.5s;
-	cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100px;
+  background-color: transparent;
+  color: white;
+  border: 1px white solid;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 .popover:hover {
-	background-color: white;
-	color: #F2A643;
-	border: none;
+  background-color: white;
+  color: red;
+  border: none;
 }
 
 .popoverContent {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .likedMoviesContainer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .crossIcon {
-	cursor: pointer;
+  cursor: pointer;
 }

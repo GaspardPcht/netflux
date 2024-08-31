@@ -1,34 +1,55 @@
 .card {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	width: 220px;
-	margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 220px;
+  margin: 15px;
 }
 
 .image {
-	width: 220px;
-	border-radius: 10px 10px 0px 0px;
+  width: 220px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .textContainer {
-	display: flex;
-	flex-direction: column;
-	height: 330px;
-	margin: 10px 0px 10px 00px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 10px 00px;
 }
 
 .name {
-	font-weight: 600;
+  font-weight: 600;
+  color: white;
+  font-size: medium;
 }
 
 .description {
-	font-weight: 300;
-	font-size: 14px;
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
 }
 
 .iconContainer {
-	display: flex;
-	flex-direction: column;
-	font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: white;
+}
+
+
+.modal {
+  box-sizing: content-box;
+  width: 100%;
+  max-width: 600px; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+  text-align: center;
+  color: white;
+}
+
+.modalContent {
+  padding: 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #141414;
 }
